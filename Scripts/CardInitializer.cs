@@ -71,7 +71,10 @@ private void InitializeCards()
 
     void Start()
     {
-        
+        for(int i = 0; i < 4; ++i)
+        {
+            numberOfTimesAnImageGotInit[i] = 2;
+        }
     }
 
     void Update()
