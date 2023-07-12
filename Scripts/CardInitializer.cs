@@ -76,6 +76,8 @@ public class CardInitializer : MonoBehaviour
         {
             numberOfTimesAnImageGotInit[i] = 2;
         }
+
+        InitializeCards();
     }
 
     void Update()
