@@ -6,7 +6,7 @@ public class CardInitializer : MonoBehaviour
 {
 
     [SerializeField] private Sprite[] images = new Sprite[4];
-    private CardToReveal card;
+    [SerializeField] private CardToReveal card;
     private int[] numberOfTimesAnImageGotInit = new int[4];
     private bool toRestart = true;
 
@@ -55,7 +55,7 @@ public class CardInitializer : MonoBehaviour
                 int index = Random.Range(0, 5);
                 index = findNonZeroElementInIntArray(index);
                 --numberOfTimesAnImageGotInit[index];
-                card = Instantiate(images[index]) as CardToReveal;
+                card = Instantiate(card) as CardToReveal;
                 
                 if(i < 4) {
                     card.transform.position = new Vector3(-3.9f + i*1.7f, 1.9f, 4.0f);
