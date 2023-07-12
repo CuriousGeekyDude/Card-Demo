@@ -16,6 +16,10 @@ public class CardToReveal : MonoBehaviour
         else { CardBack.SetActive(true); }
     }
 
+    public void setImage(Sprite imageToSet)
+    {
+        image = imageToSet;
+    }
 
     // Start is called before the first frame update
     void Start()
