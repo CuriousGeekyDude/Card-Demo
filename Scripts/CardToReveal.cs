@@ -6,7 +6,7 @@ public class CardToReveal : MonoBehaviour
 {
 
     [SerializeField] private GameObject CardBack = null;
-    
+    private Sprite image;
 
     public void OnMouseDown()
     {
@@ -20,7 +20,7 @@ public class CardToReveal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        image = this.transform.GetComponent<SpriteRenderer>().sprite;
     }
 
     // Update is called once per frame
