@@ -82,6 +82,8 @@ public class CardInitializer : MonoBehaviour
 
     void Update()
     {
-        
+        if(toRestart == true) {
+            InitializeCards();
+        }
     }
 }
