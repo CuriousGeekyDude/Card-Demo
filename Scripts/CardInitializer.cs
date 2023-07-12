@@ -25,8 +25,8 @@ public class CardInitializer : MonoBehaviour
         }
 
         if(0 < index && index < 4) {
-            var dummyVar = ++index;
-
+            var dummyVar = index;
+            ++index;
             while(index != dummyVar) {
                 if(index == 4) {
                     index = 0;
@@ -52,8 +52,10 @@ public class CardInitializer : MonoBehaviour
     {
            toRestart = false; 
             for(int i = 0; i < 8; ++i) {
-                int index = Random.Range(0, 5);
+                int index = Random.Range(0, 4);
+                Debug.Log($"{index}");
                 index = findNonZeroElementInIntArray(index);
+                if(index == -1) {  return; }
                 --numberOfTimesAnImageGotInit[index];
                 card = Instantiate(card) as CardToReveal;
                
