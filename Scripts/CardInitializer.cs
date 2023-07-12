@@ -58,11 +58,11 @@ public class CardInitializer : MonoBehaviour
                 card = Instantiate(images[index]) as CardToReveal;
                 
                 if(i < 4) {
-                    card.transform.position = new Vector3(-3.9 + i*1.7, 1.9f, 4.0f);
+                    card.transform.position = new Vector3(-3.9f + i*1.7f, 1.9f, 4.0f);
                 }
 
                 else {
-                    card.transform.position = new Vector3(-3.9 + (i - 4)*1.7, -1.0f, 4.0f);   
+                    card.transform.position = new Vector3(-3.9f + (i - 4)*1.7f, -1.0f, 4.0f);   
                 }
                 
             }
