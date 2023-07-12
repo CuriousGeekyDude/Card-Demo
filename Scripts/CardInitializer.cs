@@ -10,6 +10,41 @@ public class CardInitializer : MonoBehaviour
     private bool toRestart = true;
 
 
+    private int findNonZeroElementInIntArray(int index)
+    {
+
+        if(index == 0) {
+            while(index != 4) {
+                if(numberOfTimesAnImageGotInit[index] != 0) {
+                    return index;
+                }
+                ++index;
+            }
+            return -1;
+        }
+
+        if(0 < index && index < 4) {
+            var dummyVar = ++index;
+
+            while(index != dummyVar) {
+                if(index == 4) {
+                    index = 0;
+                }
+
+                if(numberOfTimesAnImageGotInit[index] != 0) {
+                    return index;
+                }
+
+                ++index;
+            }
+            return -1;
+        }
+
+        if(4 < index ) {
+            return -1;
+        }
+    }
+
     void Start()
     {
         
