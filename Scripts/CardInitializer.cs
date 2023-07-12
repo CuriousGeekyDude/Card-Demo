@@ -41,7 +41,7 @@ public class CardInitializer : MonoBehaviour
             return -1;
         }
 
-        if(4 < index ) {
+        if(index < 0 || 4 < index ) {
             return -1;
         }
     }
