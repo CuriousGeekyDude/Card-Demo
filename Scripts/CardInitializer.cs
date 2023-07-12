@@ -6,7 +6,7 @@ public class CardInitializer : MonoBehaviour
 {
 
     [SerializeField] private Sprite[] images = new Sprite[4];
-    private GameObjects[] imageObjects = new GameObjects[8];
+    private GameObject[] imageObjects = new GameObject[8];
     private int[] numberOfTimesAnImageGotInit = new int[4];
     private bool toRestart = true;
 
@@ -47,16 +47,26 @@ public class CardInitializer : MonoBehaviour
     }
 
 
- /*   private void InitializeCards()
+private void InitializeCards()
     {
-        for(int i = 0; i < 8; ++i) {
-            int index = Random.Range(0, 5);
-            index = findNonZeroElementInIntArray(index);
-            --numberOfTimesAnImageGotInit[index];
+        if(toRestart == true) {
+            for(int i = 0; i < 8; ++i) {
+                int index = Random.Range(0, 5);
+                index = findNonZeroElementInIntArray(index);
+                --numberOfTimesAnImageGotInit[index];
+                imageObjects[i] = Instantiate(images[index]) as GameObject;
+                
+                if(i < 4) {
+                    imageObjects[i].transform.position = new Vector3(-3.9 + i*1.7, 1.9f, 4.0f);
+                }
 
+                else {
+                    imageObjects[i].transform.position = new Vector3(-3.9 + (i - 4)*1.7, -1.0f, 4.0f);   
+                }
+                
+            }
         }
     }
-    */
 
     void Start()
     {
