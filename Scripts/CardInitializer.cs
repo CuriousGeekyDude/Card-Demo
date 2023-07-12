@@ -56,7 +56,7 @@ public class CardInitializer : MonoBehaviour
                 index = findNonZeroElementInIntArray(index);
                 --numberOfTimesAnImageGotInit[index];
                 card = Instantiate(card) as CardToReveal;
-                
+               
                 if(i < 4) {
                     card.transform.position = new Vector3(-3.9f + i*1.7f, 1.9f, 4.0f);
                 }
@@ -64,6 +64,7 @@ public class CardInitializer : MonoBehaviour
                 else {
                     card.transform.position = new Vector3(-3.9f + (i - 4)*1.7f, -1.0f, 4.0f);   
                 }
+                card.setImage(images[index]);
                 
             }
         
