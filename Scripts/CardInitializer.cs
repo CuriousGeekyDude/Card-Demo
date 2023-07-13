@@ -11,6 +11,10 @@ public class CardInitializer : MonoBehaviour
     private int[] numberOfTimesAnImageGotInit = new int[4];
     private bool toRestart = true;
 
+    void SetImageIdInScene(int index, int imageID)
+    {
+        imageIdInScene[index] = imageID;
+    }
     int RandomPlusMinusOne()
     {
         int randomNumber = Random.Range(-1, 2);
