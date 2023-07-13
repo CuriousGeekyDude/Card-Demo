@@ -38,6 +38,9 @@ public class CardInitializer : MonoBehaviour
 
                 ++index;
             }
+            if(numberOfTimesAnImageGotInit[index] != 0) {
+                    return index;
+            }
             return -1;
         }
 
@@ -53,7 +56,6 @@ public class CardInitializer : MonoBehaviour
            toRestart = false; 
             for(int i = 0; i < 8; ++i) {
                 int index = Random.Range(0, 4);
-                Debug.Log($"{index}");
                 index = findNonZeroElementInIntArray(index);
                 if(index == -1) {  return; }
                 --numberOfTimesAnImageGotInit[index];
