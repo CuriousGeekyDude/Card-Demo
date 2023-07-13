@@ -18,13 +18,13 @@ public class CardToReveal : MonoBehaviour
 
     public void setImage(Sprite imageToSet)
     {
-        
+        this.transform.GetComponent<SpriteRenderer>().sprite = imageToSet;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        image = this.transform.GetComponent<SpriteRenderer>().sprite;
+
     }
 
     // Update is called once per frame
