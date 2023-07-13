@@ -84,7 +84,7 @@ public class CardInitializer : MonoBehaviour
                     card.transform.position = new Vector3(-3.9f + (i - 4)*1.7f, -1.0f, 4.0f);   
                 }
                 card.setImage(images[index]);
-                
+                SetImageIdInScene(i, index);
             }
         
     }
