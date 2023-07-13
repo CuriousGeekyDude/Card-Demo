@@ -21,7 +21,16 @@ public class CardInitializer : MonoBehaviour
         return randomNumber;
 
     }
-    private int findNonZeroElementInIntArray(int index)
+
+    void changeIndexValue(int valueOfChange, out int index)
+    {
+        if(valueOfChange == 1) {
+            ++index;
+        }
+        else { --index; }
+    }
+
+    private int findNonZeroElementInIntArray(int index, int valueOfChange)
     {
 
         if(index == 0) {
@@ -29,7 +38,7 @@ public class CardInitializer : MonoBehaviour
                 if(numberOfTimesAnImageGotInit[index] != 0) {
                     return index;
                 }
-                ++index;
+                changeIndexValue(valueOfChange, out index);
             }
             return -1;
         }
@@ -37,6 +46,7 @@ public class CardInitializer : MonoBehaviour
         if(0 < index && index < 4) {
             var dummyVar = index;
             ++index;
+
             while(index != dummyVar) {
                 if(index == 4) {
                     index = 0;
@@ -46,7 +56,7 @@ public class CardInitializer : MonoBehaviour
                     return index;
                 }
 
-                ++index;
+                changeIndexValue(valueOfChange, out index);
             }
             if(numberOfTimesAnImageGotInit[index] != 0) {
                     return index;
