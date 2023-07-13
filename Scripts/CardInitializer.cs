@@ -13,6 +13,14 @@ public class CardInitializer : MonoBehaviour
     private int indexOfCardIdClicked;
     private bool toRestart = true;
 
+
+
+    public void NotifyOfClick(int imageID)
+    {
+        cardIdClicked[indexOfCardIdClicked] = imageID;
+        ++indexOfCardIdClicked;
+    }
+
     void SetImageIdInScene(int index, int imageID)
     {
         imageIdInScene[index] = imageID;
