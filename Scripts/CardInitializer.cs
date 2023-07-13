@@ -10,7 +10,17 @@ public class CardInitializer : MonoBehaviour
     private int[] numberOfTimesAnImageGotInit = new int[4];
     private bool toRestart = true;
 
+    int RandomPlusMinusOne()
+    {
+        int randomNumber = Random.Range(-1, 2);
 
+        while(randomNumber == 0) {
+            randomNumber = Random.Range(-1, 2);
+        }
+
+        return randomNumber;
+
+    }
     private int findNonZeroElementInIntArray(int index)
     {
 
