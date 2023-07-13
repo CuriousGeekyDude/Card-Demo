@@ -85,6 +85,7 @@ public class CardInitializer : MonoBehaviour
                 }
                 card.setImage(images[index]);
                 SetImageIdInScene(i, index);
+                card.imageID = index;
             }
         
     }
