@@ -6,6 +6,7 @@ public class CardToReveal : MonoBehaviour
 {
 
     [SerializeField] private GameObject CardBack = null;
+    [SerializeField] private int imageID;
     
 
     public void OnMouseDown()
