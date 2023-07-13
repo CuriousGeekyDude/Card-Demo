@@ -22,7 +22,7 @@ public class CardInitializer : MonoBehaviour
 
     }
 
-    void changeIndexValue(int valueOfChange, out int index)
+    void changeIndexValue(int valueOfChange, ref int index)
     {
         if(valueOfChange == 1) {
             ++index;
