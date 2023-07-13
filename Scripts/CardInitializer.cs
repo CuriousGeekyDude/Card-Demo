@@ -9,6 +9,7 @@ public class CardInitializer : MonoBehaviour
     private int[] imageIdInScene = new int[8];
     [SerializeField] private CardToReveal card;
     private int[] numberOfTimesAnImageGotInit = new int[4];
+    static public int[] cardIdClicked = new int[2];
     private bool toRestart = true;
 
     void SetImageIdInScene(int index, int imageID)
