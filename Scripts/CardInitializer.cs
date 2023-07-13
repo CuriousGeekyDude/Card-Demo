@@ -76,7 +76,7 @@ public class CardInitializer : MonoBehaviour
            toRestart = false; 
             for(int i = 0; i < 8; ++i) {
                 int index = Random.Range(0, 4);
- //               index = findNonZeroElementInIntArray(RandomPlusMinusOne(),index);
+                index = findNonZeroElementInIntArray(RandomPlusMinusOne(),index);
                 if(index == -1) {  return; }
                 --numberOfTimesAnImageGotInit[index];
                 card = Instantiate(card) as CardToReveal;
