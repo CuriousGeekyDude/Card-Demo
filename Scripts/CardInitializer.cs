@@ -64,7 +64,8 @@ public class CardInitializer : MonoBehaviour
     {
         cardIdClicked[indexOfCardIdClicked] = imageID;
         ++indexOfCardIdClicked;
-
+        ++numberOfRevealedCards;
+        
         if(indexOfCardIdClicked == 2) {
             indexOfCardIdClicked = 0;
             if(CompareClickedCards() == false) {
