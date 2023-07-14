@@ -7,6 +7,7 @@ public class CardToReveal : MonoBehaviour
 
     [SerializeField] private GameObject CardBack = null;
     [SerializeField] public int imageID;
+    [SerializeField] private CardInitializer sceneController;
     
     public void ActivateCardBack()
     {
@@ -31,7 +32,7 @@ public class CardToReveal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        sceneController = GameObject.Find("CardInitializer").GetComponent<CardInitializer>();
     }
 
     // Update is called once per frame
