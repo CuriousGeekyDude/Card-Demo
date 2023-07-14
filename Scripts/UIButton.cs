@@ -9,11 +9,16 @@ public class UIButton : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     
 
-    
+    private void OnMouseEnter()
+    {
+        if(spriteRenderer != null) {
+            spriteRenderer.color = Color.cyan;
+        }
+    }
 
     void Start()
     {
-        spriteRenderer = GameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer = sceneController.GetComponent<SpriteRenderer>();
     }
 
    
