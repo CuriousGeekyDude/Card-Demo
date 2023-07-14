@@ -167,6 +167,16 @@ public class CardInitializer : MonoBehaviour
         
     }
 
+    private IEnumerator pauseBeforeShuffling()
+    {
+        yield return new WaitForSeconds(1);
+
+        for(int i = 0; i < 8; ++i) {
+            clonedCards[i].imageID = imageIdInScene[i];
+            clonedCards[i].setImage(images[imageIdInScene[i]]);
+            clonedCards[i].ActivateCardBack();
+        }
+    }
     private void ShuffleCards()
     {
         for(int i = 0; i < 8; ++i) {
@@ -176,12 +186,7 @@ public class CardInitializer : MonoBehaviour
             imageIdInScene[randomIndex] = dummy_var;
         }
 
-        for(int i = 0; i < 8; ++i) {
-            clonedCards[i].imageID = imageIdInScene[i];
-            clonedCards[i].setImage(images[imageIdInScene[i]]);
-            clonedCards[i].ActivateCardBack();
-        }
-
+        StartCoroutine(pauseBeforeShuffling());
     }
     void Start()
     {
