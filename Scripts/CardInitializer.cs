@@ -191,7 +191,8 @@ public class CardInitializer : MonoBehaviour
     void Update()
     {
         if(numberOfRevealedCards == 8) {
-            InitializeCards();
+            numberOfRevealedCards = 0;
+            ShuffleCards();
         }
     }
 }
