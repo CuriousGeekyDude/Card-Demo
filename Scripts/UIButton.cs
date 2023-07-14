@@ -16,6 +16,13 @@ public class UIButton : MonoBehaviour
         }
     }
 
+    private void OnMouseExit()
+    {
+        if(spriteRenderer != null) {
+            spriteRenderer.color = Color.white;
+        }
+    }
+
     void Start()
     {
         spriteRenderer = sceneController.GetComponent<SpriteRenderer>();
