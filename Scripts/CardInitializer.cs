@@ -51,7 +51,7 @@ public class CardInitializer : MonoBehaviour
         else { --index; }
     }
 
-    private int findNonZeroElementInIntArray(int index, int valueOfChange)
+    private int findNonZeroElementInIntArray(int[] numberOfTimesAnImageGotInit, int index, int valueOfChange)
     {
 
         if(0 <= index && index <= 3) {
@@ -81,14 +81,19 @@ public class CardInitializer : MonoBehaviour
         return -1;
     }
 
-
+    private void initializeIntArray(int[] intArray,int valueToInitializeTo)
+    {
+        for(int i = 0; i < intArray.Length; ++i) {
+            intArray[i] = valueToInitializeTo;
+        }
+    }
     private void InitializeCards()
     {
            int[] numberOfTimesAnImageGotInit = new int[4];
            toRestart = false; 
             for(int i = 0; i < 8; ++i) {
                 int index = Random.Range(0, 4);
-                index = findNonZeroElementInIntArray(index, RandomPlusMinusOne());
+                index = findNonZeroElementInIntArray(numberOfTimesAnImageGotInit , index, RandomPlusMinusOne());
                 if(index == -1) {  return; }
                 --numberOfTimesAnImageGotInit[index];
                 card = Instantiate(card) as CardToReveal;
@@ -109,10 +114,6 @@ public class CardInitializer : MonoBehaviour
 
     void Start()
     {
-        for(int i = 0; i < 4; ++i)
-        {
-            numberOfTimesAnImageGotInit[i] = 2;
-        }
 
         InitializeCards();
     }
