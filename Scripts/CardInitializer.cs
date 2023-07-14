@@ -74,10 +74,6 @@ public class CardInitializer : MonoBehaviour
             if(CompareClickedCards() == false) {
                 StartCoroutine(ActivateCardsWithDelay(cardIdClicked[0], cardIdClicked[1]));
             }
-            else {
-                ++score;
-                scoreLabel.text = $"Score: {score}";
-            }
         }
     }
 
@@ -184,8 +180,6 @@ public class CardInitializer : MonoBehaviour
             clonedCards[i].setImage(images[imageIdInScene[i]]);
             clonedCards[i].ActivateCardBack();
         }
-        score = 0;
-        scoreLabel.text = $"Score: {score}";
     }
     private void ShuffleCards()
     {
