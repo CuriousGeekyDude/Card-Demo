@@ -40,7 +40,7 @@ public class UIButton : MonoBehaviour
     void Start()
     {
         spriteRenderer = sceneController.GetComponent<SpriteRenderer>();
-        functionToCall = "Restart";
+        functionToCall = "RestartGame";
     }
 
    
