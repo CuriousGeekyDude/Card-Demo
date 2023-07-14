@@ -18,6 +18,7 @@ public class CardToReveal : MonoBehaviour
 
     public void OnMouseDown()
     {
+        sceneController.NotifyOfClick(imageID);
         if(CardBack.activeSelf == true) {
             CardBack.SetActive(false);
         }
