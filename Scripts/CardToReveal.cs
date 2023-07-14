@@ -8,6 +8,12 @@ public class CardToReveal : MonoBehaviour
     [SerializeField] private GameObject CardBack = null;
     [SerializeField] public int imageID;
     
+    public void ActivateCardBack()
+    {
+        if(cardToDeactivate.activeSelf == false) {
+            cardToDeactivate.SetActive(true);
+        }
+    }
 
     public void OnMouseDown()
     {
