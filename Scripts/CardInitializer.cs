@@ -12,6 +12,7 @@ public class CardInitializer : MonoBehaviour
     private int[] cardIdClicked = new int[2];
     private int indexOfCardIdClicked;
     private bool toRestart = true;
+    private int numberOfRevealedCards;
 
 
     private bool CompareClickedCards()
