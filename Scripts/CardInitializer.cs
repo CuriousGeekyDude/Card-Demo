@@ -14,7 +14,8 @@ public class CardInitializer : MonoBehaviour
     private int indexOfCardIdClicked;
     private int numberOfRevealedCards;
     [SerializeField] private TMP_Text scoreLabel;
-    private int score;
+    private int totalGamesPlayed;
+    private int totalGamesWon;
 
 
     private bool CompareClickedCards()
@@ -203,6 +204,7 @@ public class CardInitializer : MonoBehaviour
         numberOfRevealedCards = 0;
         ShuffleCards();
     }
+
     void Start()
     {
         InitializeCards();
