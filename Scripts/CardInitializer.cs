@@ -26,6 +26,15 @@ public class CardInitializer : MonoBehaviour
     {
         cardIdClicked[indexOfCardIdClicked] = imageID;
         ++indexOfCardIdClicked;
+
+        if(indexOfCardIdClicked == 2) {
+            indexOfCardIdClicked = 0;
+            if(CompareClickedCards() == false) {
+                for(int i = 0; i < 8; ++i) {
+                    clonedCards[i].ActivateCardBack();
+                }
+            }
+        }
     }
 
     void SetImageIdInScene(int index, int imageID)
