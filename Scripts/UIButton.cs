@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class UIButton : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GameObject sceneController;
+    private string functionToCall;
+    
+
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         
