@@ -22,6 +22,15 @@ public class CardInitializer : MonoBehaviour
         return false;
     }
 
+    private IEnumerator ActivateCardWithDelay()
+    {
+        yield return new WaitForSeconds(1);
+
+        for(int i = 0; i < 8; ++i) {
+            clonedCards[i].ActivateCardBack();
+        }
+    }
+
     public void NotifyOfClick(int imageID)
     {
         cardIdClicked[indexOfCardIdClicked] = imageID;
