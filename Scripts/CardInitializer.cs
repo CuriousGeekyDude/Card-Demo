@@ -22,6 +22,27 @@ public class CardInitializer : MonoBehaviour
         return false;
     }
 
+    private (int,int) FindIndicesOfImageID(int imageID)
+    {
+        (int, int) indices;
+        int numberOfIndicesFound = 0;
+        for(int i = 0; i < 8; ++i) {
+            if(imageIdInScene[i] == imageID) {
+                ++numberOfIndicesFound;
+
+                switch(numberOfIndicesFound) {
+                    case 1:
+                        indices.Item1 = i;
+                        break;
+                    case 2:
+                        indices.Item2 = i;
+                        break;
+                }
+            }
+        }
+        return indices;
+    }
+    
     private IEnumerator ActivateCardWithDelay()
     {
         yield return new WaitForSeconds(1);
