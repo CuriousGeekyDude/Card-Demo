@@ -6,6 +6,7 @@ public class CardInitializer : MonoBehaviour
 {
 
     [SerializeField] private Sprite[] images = new Sprite[4];
+    [SerializeField] private CardToReveal[] clonedCards= new CardToReveal[8];
     private int[] imageIdInScene = new int[8];
     [SerializeField] private CardToReveal card;
     private int[] cardIdClicked = new int[2];
