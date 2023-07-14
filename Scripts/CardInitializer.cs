@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CardInitializer : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class CardInitializer : MonoBehaviour
     private int[] cardIdClicked = new int[2];
     private int indexOfCardIdClicked;
     private int numberOfRevealedCards;
+    private TMP_Text scoreLabel;
+    private int score;
 
 
     private bool CompareClickedCards()
