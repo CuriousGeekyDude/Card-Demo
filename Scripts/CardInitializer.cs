@@ -49,7 +49,7 @@ public class CardInitializer : MonoBehaviour
         (int, int) imageID1_indices, imageID2_indices;
         imageID1_indices = FindIndicesOfImageID(imageID_1);
         imageID2_indices = FindIndicesOfImageID(imageID_2);
-
+        numberOfRevealedCards -= 2;
         yield return new WaitForSeconds(1);
 
 
@@ -65,7 +65,7 @@ public class CardInitializer : MonoBehaviour
         cardIdClicked[indexOfCardIdClicked] = imageID;
         ++indexOfCardIdClicked;
         ++numberOfRevealedCards;
-        
+
         if(indexOfCardIdClicked == 2) {
             indexOfCardIdClicked = 0;
             if(CompareClickedCards() == false) {
