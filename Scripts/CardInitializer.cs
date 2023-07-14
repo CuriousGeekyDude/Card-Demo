@@ -133,14 +133,21 @@ public class CardInitializer : MonoBehaviour
             intArray[i] = valueToInitializeTo;
         }
     }
+
+    private int ChooseIndexRandomly(int[] numberOfTimesAnImageGotInit, int seed)
+    {
+        int index = Random.Range(0, 4);
+        index = findNonZeroElementInIntArray(numberOfTimesAnImageGotInit , index, seed);
+
+        return index;
+    }
     private void InitializeCards()
     {
            int[] numberOfTimesAnImageGotInit = new int[4];
            initializeIntArray(numberOfTimesAnImageGotInit, 2);
            numberOfRevealedCards = 0;
             for(int i = 0; i < 8; ++i) {
-                int index = Random.Range(0, 4);
-                index = findNonZeroElementInIntArray(numberOfTimesAnImageGotInit , index, RandomPlusMinusOne());
+                int index = ChooseIndexRandomly(numberOfTimesAnImageGotInit, RandomPlusMinusOne());
                 if(index == -1) {  return; }
                 --numberOfTimesAnImageGotInit[index];
                 card = Instantiate(card) as CardToReveal;
@@ -162,7 +169,6 @@ public class CardInitializer : MonoBehaviour
 
     void Start()
     {
-
         InitializeCards();
     }
 
