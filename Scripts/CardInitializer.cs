@@ -13,7 +13,7 @@ public class CardInitializer : MonoBehaviour
     private int[] cardIdClicked = new int[2];
     private int indexOfCardIdClicked;
     private int numberOfRevealedCards;
-    private TMP_Text scoreLabel;
+    [SerializeField] private TMP_Text scoreLabel;
     private int score;
 
 
@@ -72,6 +72,10 @@ public class CardInitializer : MonoBehaviour
             indexOfCardIdClicked = 0;
             if(CompareClickedCards() == false) {
                 StartCoroutine(ActivateCardsWithDelay(cardIdClicked[0], cardIdClicked[1]));
+            }
+            else {
+                ++score;
+                scoreLabel.text = $"Score: {score}";
             }
         }
     }
