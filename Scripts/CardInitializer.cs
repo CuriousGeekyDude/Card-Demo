@@ -39,9 +39,7 @@ public class CardInitializer : MonoBehaviour
         if(indexOfCardIdClicked == 2) {
             indexOfCardIdClicked = 0;
             if(CompareClickedCards() == false) {
-                for(int i = 0; i < 8; ++i) {
-                    clonedCards[i].ActivateCardBack();
-                }
+                StartCoroutine(ActivateCardWithDelay());
             }
         }
     }
