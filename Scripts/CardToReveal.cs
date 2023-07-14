@@ -10,8 +10,8 @@ public class CardToReveal : MonoBehaviour
     
     public void ActivateCardBack()
     {
-        if(cardToDeactivate.activeSelf == false) {
-            cardToDeactivate.SetActive(true);
+        if(CardBack.activeSelf == false) {
+            CardBack.SetActive(true);
         }
     }
 
