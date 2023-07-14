@@ -28,10 +28,19 @@ public class UIButton : MonoBehaviour
         this.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
     }
 
+    private void OnMouseUp()
+    {
+        this.transform.localScale = Vector3.one;
+
+        if(sceneController != null) {
+            sceneController.SendMessage(functionToCall);
+        }    
+    }
 
     void Start()
     {
         spriteRenderer = sceneController.GetComponent<SpriteRenderer>();
+        functionToCall = "Restart";
     }
 
    
