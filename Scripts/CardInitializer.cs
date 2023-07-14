@@ -42,13 +42,20 @@ public class CardInitializer : MonoBehaviour
         }
         return indices;
     }
-    
-    private IEnumerator ActivateCardWithDelay()
+
+    private IEnumerator ActivateCardsWithDelay(int imageID_1, int imageID_2)
     {
+        (int, int) imageID1_indices, imageID2_indices;
+        imageID1_indices = FindIndicesOfImageID(imageID_1);
+        imageID2_indices = FindIndicesOfImageID(imageID_2);
+
         yield return new WaitForSeconds(1);
 
+
         for(int i = 0; i < 8; ++i) {
-            clonedCards[i].ActivateCardBack();
+           if(i==imageID1_indices.Item1 || i==imageID1_indices.Item2 || i==imageID2_indices.Item1 || i==imageID2_indices.Item2) {
+                clonedCards[i].ActivateCardBack();
+           }
         }
     }
 
@@ -60,7 +67,7 @@ public class CardInitializer : MonoBehaviour
         if(indexOfCardIdClicked == 2) {
             indexOfCardIdClicked = 0;
             if(CompareClickedCards() == false) {
-                StartCoroutine(ActivateCardWithDelay());
+                StartCoroutine(ActivateCardsWithDelay(cardIdClicked[0], cardIdClicked[1]));
             }
         }
     }
