@@ -8,7 +8,6 @@ public class CardInitializer : MonoBehaviour
     [SerializeField] private Sprite[] images = new Sprite[4];
     private int[] imageIdInScene = new int[8];
     [SerializeField] private CardToReveal card;
-    private int[] numberOfTimesAnImageGotInit = new int[4];
     private int[] cardIdClicked = new int[2];
     private int indexOfCardIdClicked;
     private bool toRestart = true;
@@ -85,6 +84,7 @@ public class CardInitializer : MonoBehaviour
 
     private void InitializeCards()
     {
+           int[] numberOfTimesAnImageGotInit = new int[4];
            toRestart = false; 
             for(int i = 0; i < 8; ++i) {
                 int index = Random.Range(0, 4);
