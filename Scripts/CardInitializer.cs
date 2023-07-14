@@ -24,7 +24,7 @@ public class CardInitializer : MonoBehaviour
 
     private (int,int) FindIndicesOfImageID(int imageID)
     {
-        (int, int) indices;
+        (int, int) indices = (0, 0);
         int numberOfIndicesFound = 0;
         for(int i = 0; i < 8; ++i) {
             if(imageIdInScene[i] == imageID) {
