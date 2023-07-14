@@ -197,6 +197,12 @@ public class CardInitializer : MonoBehaviour
 
         StartCoroutine(pauseBeforeShuffling());
     }
+
+    private void RestartGame()
+    {
+        numberOfRevealedCards = 0;
+        ShuffleCards();
+    }
     void Start()
     {
         InitializeCards();
@@ -205,8 +211,7 @@ public class CardInitializer : MonoBehaviour
     void Update()
     {
         if(numberOfRevealedCards == 8) {
-            numberOfRevealedCards = 0;
-            ShuffleCards();
+            RestartGame();
         }
     }
 }
