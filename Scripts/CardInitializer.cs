@@ -14,6 +14,13 @@ public class CardInitializer : MonoBehaviour
     private bool toRestart = true;
 
 
+    private bool CompareClickedCards()
+    {
+        if(cardIdClicked[0] == cardIdClicked[1]) {
+            return true;
+        }
+        return false;
+    }
 
     public void NotifyOfClick(int imageID)
     {
