@@ -11,7 +11,6 @@ public class CardInitializer : MonoBehaviour
     [SerializeField] private CardToReveal card;
     private int[] cardIdClicked = new int[2];
     private int indexOfCardIdClicked;
-    private bool toRestart = true;
     private int numberOfRevealedCards;
 
 
@@ -138,7 +137,7 @@ public class CardInitializer : MonoBehaviour
     {
            int[] numberOfTimesAnImageGotInit = new int[4];
            initializeIntArray(numberOfTimesAnImageGotInit, 2);
-           toRestart = false; 
+           numberOfRevealedCards = 0;
             for(int i = 0; i < 8; ++i) {
                 int index = Random.Range(0, 4);
                 index = findNonZeroElementInIntArray(numberOfTimesAnImageGotInit , index, RandomPlusMinusOne());
@@ -169,7 +168,7 @@ public class CardInitializer : MonoBehaviour
 
     void Update()
     {
-        if(toRestart == true) {
+        if(numberOfRevealedCards == 8) {
             InitializeCards();
         }
     }
