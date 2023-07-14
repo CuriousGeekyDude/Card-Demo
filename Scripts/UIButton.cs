@@ -23,6 +23,12 @@ public class UIButton : MonoBehaviour
         }
     }
 
+    private void OnMouseDown()
+    {
+        this.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+    }
+
+
     void Start()
     {
         spriteRenderer = sceneController.GetComponent<SpriteRenderer>();
