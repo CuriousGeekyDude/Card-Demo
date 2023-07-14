@@ -183,6 +183,8 @@ public class CardInitializer : MonoBehaviour
             clonedCards[i].setImage(images[imageIdInScene[i]]);
             clonedCards[i].ActivateCardBack();
         }
+        score = 0;
+        scoreLabel.text = $"Score: {score}";
     }
     private void ShuffleCards()
     {
