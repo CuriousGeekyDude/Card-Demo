@@ -90,6 +90,7 @@ public class CardInitializer : MonoBehaviour
     private void InitializeCards()
     {
            int[] numberOfTimesAnImageGotInit = new int[4];
+           initializeIntArray(numberOfTimesAnImageGotInit, 2);
            toRestart = false; 
             for(int i = 0; i < 8; ++i) {
                 int index = Random.Range(0, 4);
