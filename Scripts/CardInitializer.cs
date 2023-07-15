@@ -195,7 +195,10 @@ public class CardInitializer : MonoBehaviour
 
     private void RestartGame()
     {
+        ++totalGamesPlayed;
         numberOfRevealedCards = 0;
+        indexOfCardIdClicked = 0;
+        scoreLabel.text = $"Games: {totalGamesPlayed}\nWon:     {totalGamesWon}";
         ShuffleCards();
     }
 
@@ -207,6 +210,7 @@ public class CardInitializer : MonoBehaviour
     void Update()
     {
         if(numberOfRevealedCards == 8) {
+            ++totalGamesWon;
             RestartGame();
         }
     }
