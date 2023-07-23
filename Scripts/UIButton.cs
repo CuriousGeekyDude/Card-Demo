@@ -25,7 +25,7 @@ public class UIButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        this.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+        this.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
     }
 
     private void OnMouseUp()
