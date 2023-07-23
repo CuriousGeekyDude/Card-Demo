@@ -3,7 +3,7 @@
 ## About
 This is a simple card demo. Cards are randomly shuffled. You have to pick 2 cards at a time. If they match, the front card won't be activated and consequently the cards stay revealed until the end of the game.
 However, if there is a mismatch then the front card is reactivated and the chosen cards are again hidden from sight. You have to continue doing
-this until you have found all the similar cards. Then you win. The win: label will be incremented by one if you win. The Games: label will be 
+this until you have found all the similar cards. Then you win. The "Win:" label will be incremented by one if you win. The "Games:" label will be 
 incremented if you win a game or you click on the start button which restarts the game altogether. The following are 3 screenshots from the 
 game: 
 
